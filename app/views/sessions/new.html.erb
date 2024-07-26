@@ -1,0 +1,22 @@
+
+
+
+<div class="container">
+
+
+<%= notice%>
+  <%= form_with(scope: :session,url:login_path, remote: true) do |form| %>
+
+    <div>
+    <%= form.label :email %>
+    <%= form.email_field :email %>
+   </div>
+    <div>
+    <%= form.label :password %>
+    <%= form.password_field :password %>
+   </div>
+    <div>
+      <%= form.submit "Login" %>
+    </div>
+  <% end %>
+</div>

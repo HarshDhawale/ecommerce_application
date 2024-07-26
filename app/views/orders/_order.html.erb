@@ -1,0 +1,12 @@
+<div id="<%= dom_id order %>">
+  <p>
+    <strong>Customer:</strong>
+    <%= link_to "#{order.customer.name}", customer_path(order.customer_id)%>
+  </p>
+
+  <p>
+  <strong>Product:</strong>
+    <%= link_to "#{order.product.name}", product_path(order.product_id)%>
+  </p>
+
+</div>

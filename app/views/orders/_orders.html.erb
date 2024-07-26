@@ -1,0 +1,13 @@
+<div id="orders">
+<% if obj.size!=0 %>
+  <% obj.each do |order| %>
+    <%= render order %>
+    <p>
+      <%= link_to "Show this order", order %>
+    </p>
+  <% end %>
+  <%else%>
+   <h1>SORRY NO ORDERS</h1>
+  <%end%>
+
+</div>

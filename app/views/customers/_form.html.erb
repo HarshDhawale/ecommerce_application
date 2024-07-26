@@ -1,0 +1,51 @@
+
+
+
+<div class="container">
+<% if customer.errors.any? %>
+
+  <h2><%= pluralize(customer.errors.count, "error") %> prohibited this customer from being saved:</h2>
+  <ul>
+    <% customer.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+
+<% end %>
+
+
+  <%= form_with(model: customer, remote: true) do |form| %>
+
+    <div>
+    <%= form.label :email %>
+    <%= form.email_field :email %>
+   </div>
+    <div>
+      <%= form.label :name %>
+      <%= form.text_field :name %>
+    </div>
+
+    <div>
+      <%= form.label :address %>
+      <%= form.text_field :address %>
+    </div>
+
+    <div>
+      <%= form.label :dob %>
+      <%= form.date_field :dob %>
+    </div>
+
+    <div>
+      <%= form.label :phone_number %>
+      <%= form.number_field :phone_number %>
+    </div>
+    <div>
+    <%= form.label :password %>
+    <%= form.password_field :password %>
+   </div>
+
+    <div>
+      <%= form.submit  "Sign Up" %>
+    </div>
+  <% end %>
+</div>

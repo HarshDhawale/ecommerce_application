@@ -1,0 +1,32 @@
+<!-- app/views/customers/index.html.erb -->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Customers</title>
+  <%= stylesheet_link_tag 'customers' %>
+
+</head>
+<body>
+  <div class="container">
+    <p class="notice"><%= notice %></p>
+
+    <h1 class="header">Customers</h1>
+
+    <div id="customers" class="customer-list">
+      <% @customers.each do |customer| %>
+        <div class="customer-card">
+          <%= render 'customer', customer: customer %>
+          <div class="customer-details">
+            <p><%= link_to "Show this customer", customer_path(customer), class: "btn btn-primary" %></p>
+          </div>
+        </div>
+      <% end %>
+    </div>
+
+    <%= link_to "New customer", 'signup', class: "btn btn-secondary" %>
+     <%= link_to "Products", products_path, class: "btn btn-secondary" %>
+     <%= link_to "Orders", orders_path, class: "btn btn-secondary" %>
+  </div>
+</body>
+</html>
